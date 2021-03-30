@@ -14,14 +14,14 @@ The following **required** functionality is completed:
 
 The following **optional** features are implemented:
 
-- [ ] User sees app icon in home screen and styled bottom navigation view
-- [ ] Style the feed to look like the real Instagram feed.
+- [x] User sees app icon in home screen and styled bottom navigation view
+- [x] Style the feed to look like the real Instagram feed.
 - [ ] User can load more posts once he or she reaches the bottom of the feed using infinite scrolling.
-- [ ] Show the username and creation time for each post.
+- [x] Show the username and  - [ ] creation time for each post.
 - [ ] User can tap a post to view post details, including timestamp and caption.
 - [ ] User Profiles
       - [ ] Allow the logged in user to add a profile photo
-      - [ ] Display the profile photo with each post
+      - [x] Display the profile photo with each post
       - [ ] Tapping on a post's username or profile photo goes to that user's profile page and shows a grid view of the user's posts 
 - [ ] User can comment on a post and see all comments for each post in the post details screen.
 - [ ] User can like a post and see number of likes for each post in the post details screen.
@@ -42,7 +42,6 @@ GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
 - [Android Async HTTP](https://github.com/codepath/CPAsyncHttpClient) - Simple asynchronous HTTP requests with JSON parsing
 - [Glide](https://github.com/bumptech/glide) - Image loading and caching library for Android
-
 
 # InstagramClone
 
