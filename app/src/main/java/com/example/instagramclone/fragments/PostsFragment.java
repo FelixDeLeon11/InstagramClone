@@ -1,5 +1,6 @@
 package com.example.instagramclone.fragments;
 
+import android.content.Context;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -13,6 +14,8 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.example.instagramclone.Post;
 import com.example.instagramclone.PostsAdapter;
@@ -25,12 +28,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class PostsFragment extends Fragment {
-
+    protected ImageView top_right_image;
     public static final String TAG = "PostsFragment";
     private RecyclerView rvPosts;
     protected PostsAdapter adapter;
     protected List<Post> allPosts;
     private SwipeRefreshLayout swipeContainer;
+    protected Context context;
 
     public PostsFragment() {
         // Required empty public constructor
@@ -46,7 +50,11 @@ public class PostsFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        top_right_image = getActivity().findViewById(R.id.direct);
+        top_right_image.setImageResource(R.drawable.ic_action_direct);
+        top_right_image.setSoundEffectsEnabled(false);
         rvPosts = view.findViewById(R.id.rvPosts);
+        context = getContext();
 
         //Steps for recyvlerview
         //0. create layout for one row in list
@@ -94,6 +102,7 @@ public class PostsFragment extends Fragment {
                 adapter.notifyDataSetChanged();
             }
         });
+        setLogoutListener();
     }
 
     protected void refreshPosts() {
@@ -114,6 +123,15 @@ public class PostsFragment extends Fragment {
                 adapter.clear();
                 adapter.addAll(posts);
                 swipeContainer.setRefreshing(false);
+            }
+        });
+    }
+
+    protected void setLogoutListener(){
+        top_right_image.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+//                Toast.makeText(context, "HELLO posts", Toast.LENGTH_SHORT).show();
             }
         });
     }
